@@ -4,21 +4,27 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Dylan Bodoh
  * 
- * Brief summary of modifications:
+ * Brief summary of modifications: added sigmentation fault handler
  */
 
 
 #include <stdio.h>
+#include <signal.h>
 
-int main (int argc, char* argv[]) {
-    // Declare a null pointer
-    int* i = NULL;
+void segv_handler(int sig)
+{
+    printf("Segmentation fault signal received\n");
+}
 
-    // Dereference the null pointer
+int main(int argc, char *argv[])
+{
+    signal(SIGSEGV, segv_handler);
+
+    int *i = NULL;
+
     printf("The value of i is: %d\n", *i);
 
-    // Return to exit the program
     return 0;
 }

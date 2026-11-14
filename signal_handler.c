@@ -18,7 +18,7 @@
 /**
  * @brief Signal handler for SIGINT - prints a message and exits
  */
-void handle_signal() {
+void handle_signal(int sig) {
     printf("Received a signal\n");
     exit(1);
 }

@@ -53,3 +53,9 @@ dkms.conf
 
 *:Zone.Identifier
 *:sec.endpointdlp
+signal_segfault
+signal_sigaction
+recv_signal
+signal_alarm
+send_signal
+signal_handler
